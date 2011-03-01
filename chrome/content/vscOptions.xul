@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+
+<!-- ***** BEGIN LICENSE BLOCK *****
+   - Version: MPL 1.1/GPL 2.0/LGPL 2.1
+   -
+   - The contents of this file are subject to the Mozilla Public License Version
+   - 1.1 (the "License"); you may not use this file except in compliance with
+   - the License. You may obtain a copy of the License at
+   - http://www.mozilla.org/MPL/
+   -
+   - Software distributed under the License is distributed on an "AS IS" basis,
+   - WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+   - for the specific language governing rights and limitations under the
+   - License.
+   -
+   - The Original Code is BRIKS, Brian King s.p.
+   -
+   - The Initial Developer of the Original Code is
+   - Brian King <brian@mozdev.org>.
+   - Portions created by the Initial Developer are Copyright (C) 2006-2009
+   - the Initial Developer. All Rights Reserved.
+   -
+   - Contributor(s):
+   -
+   - Alternatively, the contents of this file may be used under the terms of
+   - either the GNU General Public License Version 2 or later (the "GPL"), or
+   - the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+   - in which case the provisions of the GPL or the LGPL are applicable instead
+   - of those above. If you wish to allow use of your version of this file only
+   - under the terms of either the GPL or the LGPL, and not to allow others to
+   - use your version of this file under the terms of the MPL, indicate your
+   - decision by deleting the provisions above and replace them with the notice
+   - and other provisions required by the LGPL or the GPL. If you do not delete
+   - the provisions above, a recipient may use your version of this file under
+   - the terms of any one of the MPL, the GPL or the LGPL.
+   -
+   - ***** END LICENSE BLOCK ***** -->
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!--
+<?xml-stylesheet href="chrome://mozapps/content/preferences/preferences.css"?>
+<?xml-stylesheet href="chrome://browser/skin/preferences/preferences.css"?>
+-->
+<?xml-stylesheet href="chrome://vsc/skin/vscOptions.css" type="text/css"?>
+
+<!DOCTYPE prefwindow [
+  <!ENTITY % optionsDTD SYSTEM "chrome://vsc/locale/vscOptions.dtd">
+  %optionsDTD;
+]>
+
+<prefwindow id="vscOptionsDialog"
+      type="prefwindow"
+      xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+      windowtype="vsc:options"
+      title="&window.title;"
+      buttons="accept,cancel"
+      style="width: 28em !important;"
+      onload="vscOptions.onLoad();">
+
+  <script type="application/x-javascript" src="chrome://vsc/content/js/vscOptions.js"/>
+
+  <prefpane id="vscPrefsPane">
+
+    <preferences id="vscPrefs">
+      <preference id="extensions.vsc.enabled" name="extensions.vsc.enabled" type="bool"/>
+      <preference id="extensions.vsc.override" name="extensions.vsc.override" type="bool"/>
+      <preference id="extensions.vsc.open" name="extensions.vsc.open" type="int"/>
+      <preference id="extensions.vsc.position" name="extensions.vsc.position" type="int"/>
+    </preferences>
+
+    <tabbox id="vscPrefsBox" persist="selectedIndex" flex="1">
+      <tabs>
+        <tab label="&tab.general.label;"/>
+        <tab label="&tab.choice.label;"/>
+      </tabs>
+      <tabpanels flex="1">
+        <tabpanel id="genltab" orient="vertical" align="start">
+            <checkbox id="vsc-enabled" label="&prefs.enable.label;"
+                      preference="extensions.vsc.enabled"/>
+            <checkbox id="vsc-override" label="&prefs.override.label;"
+                      preference="extensions.vsc.override"/>
+            <description flex="1" control="vsc-override">
+              &prefs.override.more;
+            </description>
+        </tabpanel>
+        <tabpanel id="choicetab">
+          <groupbox id="viewin-gbox" flex="1">
+            <caption label="&view.label;"/>
+            <radiogroup id="vsc-openchoice-group" preference="extensions.vsc.open">
+              <radio id="current" label="&current.label;" value="0"/>
+              <radio id="tab" label="&tab.label;" value="1"/>
+              <radio id="window" label="&window.label;" value="2"/>
+              <radio id="vswindow" label="&or.label;" value="3"/>
+            </radiogroup>
+
+            <separator class="thin"/>
+
+            <vbox align="center">
+              <menulist id="positionMenu" preference="extensions.vsc.position">
+                <menupopup>
+                  <menuitem label="&sidebar.label;" value="0"/>
+                  <menuitem label="&sidebarright.label;" value="1"/>
+                  <menuitem label="&top.label;" value="3"/>
+                  <menuitem label="&bottom.label;" value="2"/>
+                </menupopup>
+              </menulist>
+
+              <radiogroup id="positionSelector" preference="extensions.vsc.position" align="stretch"
+                          orient="horizontal">
+                <vbox align="stretch" orient="stretch">
+                  <radio id="positionTop" value="3"/>
+                  <hbox flex="1">
+                    <radio id="positionLeft" value="0"/>
+                    <spacer flex="1"/>
+                    <radio id="positionRight" value="1"/>
+                  </hbox>
+                  <radio id="positionBottom" value="2"/>
+                </vbox>
+              </radiogroup>
+            </vbox>
+
+          </groupbox>
+        </tabpanel>
+      </tabpanels>
+    </tabbox>
+
+  </prefpane>
+
+</prefwindow>
