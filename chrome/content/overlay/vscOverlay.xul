@@ -85,9 +85,9 @@
     </menupopup>
   </menu> -->
 
-  <!-- Custom Sidebar - left or right-->
+  <!-- Custom Sidebar - left or right -->
   <hbox id="content">
-    <splitter id="vsc-sidebar-splitter" class="chromeclass-extrachrome" hidden="true" persist="hidden" insertafter="vsc-sidebar-container"/>
+    <splitter id="vsc-sidebar-splitter" class="chromeclass-extrachrome" hidden="true" persist="hidden"/>
     <hbox id="vsc-sidebar-container" collapsed="true" persist="width">
       <vbox id="vsc-sidebar-box" flex="1">
         <sidebarheader id="vsc-sidebar-header" align="center">

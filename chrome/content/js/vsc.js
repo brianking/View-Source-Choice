@@ -184,9 +184,7 @@ const vscClass =
             vscClass.loadCustom();
       }
     },
-    onLocationChange : function (wp, req, loc) {
-      /* Probably need to set the URL bar back to correct URL if redirected to new tab/window */
-    },
+    onLocationChange : function (wp, req, loc) {},
     onStatusChange : function (wp, req, status, message) {},
     onSecurityChange : function (wp, req, state) {},
     startDocumentLoad : function(req) {},
@@ -245,7 +243,7 @@ const vscClass =
 
     if (sourceUrl) {
         var browserid = (vcPosition == 0 || vcPosition == 1) ? "vsc-sidebar" : "vsc-verticalbar";
-        var titleid = (vcPosition == 2 || vcPosition == 3) ? "vsc-sidebar-title" : "vsc-vertical-title";
+        var titleid = (vcPosition == 0 || vcPosition == 1) ? "vsc-sidebar-title" : "vsc-vertical-title";
         document.getElementById(browserid).loadURI(sourceUrl);
         document.getElementById(titleid).value = "VSC : "+document.title;
         vscClass.toggleCustom("true");
@@ -271,18 +269,16 @@ const vscClass =
       case 0:  // sidebar left
         vscClass.sidebarContainer.removeAttribute("collapsed");
         vscClass.sidebarContainer.removeAttribute("onright");
-        vscClass.sidebarSplitter.setAttribute("hidden", false);
+        vscClass.sidebarSplitter.hidden = false;
         c.setAttribute("vsc-dir", "left");
-        this.sidebarOnRight = false;
         vscClass.verticalBox.collapsed = true;
         vscClass.verticalSplitter.hidden = true;
         break;
       case 1: // sidebar right
         vscClass.sidebarContainer.removeAttribute("collapsed");
         vscClass.sidebarContainer.setAttribute("onright", "true");
-        vscClass.sidebarSplitter.setAttribute("hidden", false);
+        vscClass.sidebarSplitter.hidden = false;
         c.setAttribute("vsc-dir", "right");
-        this.sidebarOnRight = true;
         vscClass.verticalBox.collapsed = true;
         vscClass.verticalSplitter.hidden = true;
         break;

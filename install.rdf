@@ -43,11 +43,12 @@
 
         <em:id>vsc@briks.si</em:id>
         <em:name>View Source Choice</em:name>
-        <em:version>0.6</em:version>
+        <em:version>1.0</em:version>
         <em:description>View Page Source in a variety of contexts</em:description>
         <em:creator>Briks Software</em:creator>
         <em:developer>Brian King</em:developer>
         <em:contributor>WYSIWYG Classic Icons by dryicons (http://dryicons.com/)</em:contributor>
+        <em:contributor>Some Settings UI code by Dave Townsend (https://addons.mozilla.org/addon/tab-sidebar/)</em:contributor>
         <em:homepageURL>http://briks.si/projekti/vsc/</em:homepageURL>
         <em:optionsURL>chrome://vsc/content/vscOptions.xul</em:optionsURL>
         <em:iconURL>chrome://vsc/skin/icons/source.png</em:iconURL>
