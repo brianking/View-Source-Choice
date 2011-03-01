@@ -6,7 +6,7 @@ Firefox 3.6 or above.
 
 FEATURES
 - Handle View Source requests that come in through the view-source: protocol.
-- Override of ‘View->Page Source’ (Ctrl+U), customisable in Settings.
+- Override of 'View->Page Source' (Ctrl+U), customisable in Settings.
 - Turn extension on and off in Settings.
 - Redirect View Source to current window, new tab, new window, or a custom view (left sidebar, right sidebar, bottom bar or top bar)
 - Adds item to browser content context menu.
