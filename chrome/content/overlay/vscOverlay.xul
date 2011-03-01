@@ -51,7 +51,6 @@
       xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
   <script type="application/x-javascript" src="chrome://vsc/content/js/vsc.js"/>
-  <script type="application/x-javascript" src="chrome://vsc/content/js/vscViewPartialSource.js"/>
 
   <stringbundleset id="stringbundleset">
     <stringbundle id="viewSourceBundle" src="chrome://global/locale/viewSource.properties"/>
